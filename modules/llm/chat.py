@@ -331,7 +331,7 @@ class OpenAIApiNode:
 
     RETURN_TYPES = ("LLM_API",)
     FUNCTION = "create_api"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def create_api(self, openai_api_key, endpoint):
         if not openai_api_key or openai_api_key == "":
@@ -356,7 +356,7 @@ class ClaudeApiNode:
     RETURN_TYPES = ("LLM_API",)
     RETURN_NAMES = ("llm_api",)
     FUNCTION = "create_api"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def create_api(self, claude_api_key, endpoint, version):
         if not claude_api_key or claude_api_key == "":
@@ -382,7 +382,7 @@ class AwsBedrockMistralApiNode:
     RETURN_TYPES = ("LLM_API",)
     RETURN_NAMES = ("llm_api",)
     FUNCTION = "create_api"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def create_api(self, aws_access_key_id, aws_secret_access_key, aws_session_token, region):
         if not aws_access_key_id or aws_access_key_id == "":
@@ -421,7 +421,7 @@ class AwsBedrockClaudeApiNode:
     RETURN_TYPES = ("LLM_API",)
     RETURN_NAMES = ("llm_api",)
     FUNCTION = "create_api"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def create_api(self, aws_access_key_id, aws_secret_access_key, aws_session_token, region, version):
         if not aws_access_key_id or aws_access_key_id == "":
@@ -467,7 +467,7 @@ class LLMApiConfigNode:
     RETURN_TYPES = ("LLM_CONFIG",)
     RETURN_NAMES = ("llm_config",)
     FUNCTION = "make_config"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def make_config(self, max_token, model, temperature):
         return (LLMConfig(model=model, max_token=max_token, temperature=temperature),)
@@ -487,7 +487,7 @@ class LLMMessageNode:
     RETURN_TYPES = ("LLM_MESSAGE",)
     RETURN_NAMES = ("messages",)
     FUNCTION = "make_message"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def make_message(self, role, text, image: Optional[Tensor] = None, messages: Optional[List[LLMMessage]] = None):
         messages = [] if messages is None else messages.copy()
@@ -525,7 +525,7 @@ class LLMChatNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("response",)
     FUNCTION = "chat"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def chat(self, messages: List[LLMMessage], api: LLMApi, config: LLMConfig, seed):
         response = api.chat(messages, config, seed)
@@ -547,7 +547,7 @@ class LLMCompletionNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("response",)
     FUNCTION = "chat"
-    CATEGORY = "ArtVenture/LLM"
+    CATEGORY = "Art Venture/LLM"
 
     def chat(self, prompt: str, api: LLMApi, config: LLMConfig, seed):
         response = api.complete(prompt, config, seed)

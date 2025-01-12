@@ -42,7 +42,7 @@ try:
             )
             return inputs
 
-        CATEGORY = "ArtVenture/Detailer"
+        CATEGORY = "Art Venture/Detailer"
 
         def args_to_pipe(self, args: dict):
             hook_args = [
@@ -81,7 +81,7 @@ try:
             )
             return inputs
 
-        CATEGORY = "ArtVenture/Detailer"
+        CATEGORY = "Art Venture/Detailer"
 
         def doit(self, image, detailer_pipe, *args, enabled=True, **kwargs):
             if enabled:
